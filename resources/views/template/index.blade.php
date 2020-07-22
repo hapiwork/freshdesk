@@ -33,9 +33,11 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>Stt</th>
-                                            <th>Tên mẫu tin</th>
-                                            <th>Loại mẫu tin</th>
+                                            <th><span style="text-transform: uppercase">Stt</span></th>
+                                            <th><span style="text-transform: uppercase">Tên mẫu tin</span></th>
+                                            <th><span style="text-transform: uppercase">Loại mẫu tin</span></th>
+                                            <th><span style="text-transform: uppercase">Người tạo</span></th>
+                                            <th><span style="text-transform: uppercase">Lần cập nhật cuối</span></th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -47,7 +49,11 @@
                                             <th scope="row">{{ $i }}</th>
                                             <th>{{ $template->title }}</th>
                                             <th>{{ $template->is_global ? 'Hệ thống' : 'Cá nhân' }}</th>
+                                            <th>{{ $template->user->first_name }}, {{ $template->user->last_name }} </th>
+                                            <th>{{ $template->updated_at }}</th>
                                             <th>
+                                                <a href="{{ URL::to('freshdesk/template/'.$template->id) }}">Xem </a>&nbsp;
+                                                @if($template->is_global && $template->user_id == auth()->id())
                                                 <a href="{{ URL::to('freshdesk/template/'.$template->id.'/edit') }}">Chỉnh sửa</a>
                                                 <form onSubmit="return confirm('Bạn có chắc là bạn muốn xóa hay không?');" action="/freshdesk/template/{{ $template->id }}" method="post" class="display-inline" />
                                                     @csrf
@@ -59,6 +65,7 @@
                                                         color: #607D8B;
                                                         ">Xóa</button>
                                                 </form>
+                                                @endif
                                             </th>
                                         </tr>
                                         <?php $i++; ?>
