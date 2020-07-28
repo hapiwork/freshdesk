@@ -27,6 +27,9 @@
             <button class="btn btn-info" type="submit">Lưu</button>
         </div>
     <form>
+    <div style="padding: 15px 10px;">
+        <p><a href="{{ url('freshdesk/template') }}">Trở về danh sách mẫu tin</a></p>
+    </div>
 @endsection
 
 @section('footer')

@@ -74,11 +74,6 @@
 
                                     </tbody>
                                 </table>
-                                <script>
-                                    function submitConfirm(e) {
-                                        console.log(e);
-                                    }
-                                </script>
 
                             @else 
                                 <p>Chưa có mẫu tin nào</p>
