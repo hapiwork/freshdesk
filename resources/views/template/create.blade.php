@@ -30,6 +30,7 @@
     <div style="padding: 15px 10px;">
         <p><a href="{{ url('freshdesk/template') }}">Trở về danh sách mẫu tin</a></p>
     </div>
+</div>
 @endsection
 
 @section('footer')
