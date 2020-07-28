@@ -53,7 +53,7 @@
                                             <th>{{ $template->updated_at }}</th>
                                             <th>
                                                 <a href="{{ URL::to('freshdesk/template/'.$template->id) }}">Xem </a>&nbsp;
-                                                @if($template->is_global && $template->user_id == auth()->id())
+                                                @if($template->user_id == auth()->id())
                                                 <a href="{{ URL::to('freshdesk/template/'.$template->id.'/edit') }}">Chỉnh sửa</a>
                                                 <form onSubmit="return confirm('Bạn có chắc là bạn muốn xóa hay không?');" action="/freshdesk/template/{{ $template->id }}" method="post" class="display-inline" />
                                                     @csrf
