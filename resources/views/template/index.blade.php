@@ -34,7 +34,7 @@
                                     <thead>
                                         <tr>
                                             <th><span style="text-transform: uppercase">Stt</span></th>
-                                            <th><span style="text-transform: uppercase">Tên mẫu tin</span></th>
+                                            <th style="text-align: center"><span style="text-transform: uppercase">Tên mẫu tin</span></th>
                                             <th><span style="text-transform: uppercase">Loại mẫu tin</span></th>
                                             <th><span style="text-transform: uppercase">Người tạo</span></th>
                                             <th><span style="text-transform: uppercase">Lần cập nhật cuối</span></th>
