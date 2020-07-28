@@ -16,7 +16,7 @@ class TemplateController extends Controller
      */
     public function index(Request $request)
     {
-        return Template::with('user')->where('user_id', $request->input('user_id'))->orWhere->global()->get();
+        return Template::with('user')->where('user_id', $request->input('user_id'))->orWhere->global()->orderBy('title', 'asc')->get();
     }
     
 }

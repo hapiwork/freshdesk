@@ -16,7 +16,7 @@ class TemplateController extends Controller
      */
     public function index()
     {
-        $templates = Template::with('user')->where('user_id', Auth::id())->orWhere->global()->get();
+        $templates = Template::with('user')->where('user_id', Auth::id())->orWhere->global()->orderBy('title', 'asc')->get();
         return view("hapiwork-freshdesk::template.index")
                     ->with('templates', $templates);
     }

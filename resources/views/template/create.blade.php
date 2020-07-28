@@ -10,7 +10,7 @@
             <input required name="title" class="form-control" placeholder="Tên mẫu"/>
         </div>
         <div class="form-group">
-            <textarea required id="summernote" name="content" rows="5"></textarea>
+            <textarea id="summernote" name="content" rows="5"></textarea>
         </div>
         <div class="row">
             <div class="col-md-3">
@@ -30,13 +30,34 @@
 @endsection
 
 @section('footer')
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script src="https://cdn.tiny.cloud/1/fekq8uwyab1i0apchinfnjrcivkbgmr8u4onti4gkegc3r3j/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
 <script>
 $(document).ready(function() {
-  $('#summernote').summernote({
-    height: 300
-  });
+    tinymce.init({
+        selector: '#summernote',
+        height: 350,
+        menubar: false,
+        plugins: [
+        'advlist autolink lists link image charmap print preview anchor',
+        'searchreplace visualblocks code',
+        'insertdatetime media table paste code help wordcount textcolor table'
+        ],
+        toolbar:
+        'undo redo | formatselect | bold italic forecolor | \
+        alignleft aligncenter alignright alignjustify | \
+        bullist numlist outdent indent code  | \
+        table | tableprops ',
+        content_style: `body { font-family: "Times New Roman"; }
+            p, h1, h2, h3, h4, h5 {
+            margin-bottom: 0;
+            margin-top: 5px;
+            }
+            ul, table {
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }`
+    });
 });
 </script>
 @endsection
